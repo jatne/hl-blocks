@@ -1,59 +1,98 @@
 <script context="module">
-	export const prerender = true;
+	import { getPagesGraphQL, getPagesGROQ } from '../utils/helpers'
+	import client from '$lib/client'
+
+	export const prerender = true
+
+	export async function load({ fetch }) {
+		const pagesGraphQL = await getPagesGraphQL(fetch)
+		const pagesGROQ = await getPagesGROQ(fetch)
+
+		return {
+			props: {
+				pagesGraphQL,
+				pagesGROQ,
+			},
+		}
+	}
 </script>
 
 <script>
-	import Counter from '$lib/Counter.svelte';
+	import PageBuilder from '$lib/page-builder/PageBuilder.svelte'
+	import imageUrlBuilder from '@sanity/image-url'
+	export let pagesGraphQL
+	export let pagesGROQ
+
+	let showDebug = false
+
+	const toggleDebug = () => (showDebug = !showDebug)
+
+	function urlFor(source) {
+		return imageUrlBuilder(client).image(source)
+	}
 </script>
 
-<svelte:head>
-	<title>Home</title>
-</svelte:head>
+<div class="container">
+	<div>
+		<h1>
+			All pages - GRAPHQL <button on:click={toggleDebug}>toggle debug</button>
+		</h1>
 
-<section>
-	<h1>
-		<div class="welcome">
-			<picture>
-				<source srcset="svelte-welcome.webp" type="image/webp" />
-				<img src="svelte-welcome.png" alt="Welcome" />
-			</picture>
-		</div>
+		{#each pagesGraphQL as page}
+			<hr />
+			<h2>{page.name} <small>({page.slug.current})</small></h2>
+			<PageBuilder blocks={page.contentRaw} />
+			<hr />
+		{/each}
 
-		to your new<br />SvelteKit app
-	</h1>
+		{#if showDebug}
+			<div class="debug">
+				<span on:click={toggleDebug}>X</span>
+				<pre>{JSON.stringify(pagesGraphQL, null, 2)}</pre>
+			</div>
+		{/if}
+	</div>
+	<div>
+		<h1>All pages - GROQ</h1>
 
-	<h2>
-		try editing <strong>src/routes/index.svelte</strong>
-	</h2>
-
-	<Counter />
-</section>
+		{#each pagesGROQ as page}
+			<hr />
+			<h2>{page.name} <small>({page.slug.current})</small></h2>
+			<PageBuilder blocks={page.content} />
+			{#if page.imageFeatured}
+				<img src={urlFor(page.imageFeatured)} alt />
+			{/if}
+			<hr />
+		{/each}
+	</div>
+</div>
 
 <style>
-	section {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		flex: 1;
+	.container {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		column-gap: 10em;
+		padding: 2em;
 	}
 
-	h1 {
-		width: 100%;
+	.debug {
+		position: fixed;
+		right: 10px;
+		top: 10px;
+		max-width: 600px;
+		max-height: 500px;
+		overflow: auto;
 	}
 
-	.welcome {
-		position: relative;
-		width: 100%;
-		height: 0;
-		padding: 0 0 calc(100% * 495 / 2048) 0;
+	.debug span {
+		position: fixed;
+		font-weight: 600;
+		cursor: pointer;
 	}
-
-	.welcome img {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		top: 0;
-		display: block;
+	.debug pre {
+		background: #ddd;
+		padding: 1rem;
+		border-radius: 6px;
+		border: 1px solid rgb(138, 138, 138);
 	}
 </style>
