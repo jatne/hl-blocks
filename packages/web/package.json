@@ -9,18 +9,24 @@
     "format": "prettier --ignore-path .gitignore --write --plugin-search-dir=. ."
   },
   "devDependencies": {
+    "@portabletext/svelte": "0.1.0-next.0",
+    "@sanity/client": "^2.21.0",
+    "@sanity/image-url": "^1.0.1",
+    "@sveltejs/adapter-static": "^1.0.0-next.21",
     "@sveltejs/kit": "next",
+    "@tsconfig/svelte": "^2.0.1",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-svelte3": "^3.2.1",
+    "graphql": "^15.6.1",
+    "graphql-request": "^3.5.0",
+    "groq": "^2.15.0",
     "prettier": "^2.4.1",
     "prettier-plugin-svelte": "^2.4.0",
-    "svelte": "^3.34.0"
+    "svelte": "^3.34.0",
+    "svelte-check": "^2.2.7",
+    "svelte-preprocess": "^4.9.8",
+    "typescript": "^4.4.4"
   },
-  "type": "module",
-  "dependencies": {
-    "@fontsource/fira-mono": "^4.5.0",
-    "@lukeed/uuid": "^2.0.0",
-    "cookie": "^0.4.1"
-  }
+  "type": "module"
 }
