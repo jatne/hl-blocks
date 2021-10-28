@@ -1,6 +1,11 @@
 {
   "name": "root",
   "private": true,
+  "scripts": {
+    "dev": "lerna run dev --parallel",
+    "dev:web": "cd ./packages/web && npm run dev -- --open",
+    "dev:studio": "cd ./packages/studio && sanity start"
+  },
   "devDependencies": {
     "lerna": "^4.0.0"
   }
