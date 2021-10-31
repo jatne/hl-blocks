@@ -1,20 +1,14 @@
-import groq from 'groq'
 import client from '$lib/client'
-
+import { getAllPages } from '$lib/queries'
 
 export async function get() {
-
   try {
-    const query = groq`
-      *[_type == 'page']{name, slug, content, imageFeatured}
-    `
-
-    const  allPage  =  await client.fetch(query)
+    const data = await client.fetch(getAllPages)
 
     return {
       status: 200,
       body: {
-        pagesGROQ: allPage,
+        data,
       },
     }
   } catch (err) {
