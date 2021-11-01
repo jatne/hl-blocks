@@ -1,5 +1,5 @@
 import client from '$lib/client'
-import { getPageBySlug } from '$lib/queries'
+import { getPageBySlug } from '../utils/queries'
 
 export async function get(req) {
   try {
