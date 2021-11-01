@@ -1,5 +1,5 @@
 import client from '$lib/client'
-import { getSettings } from '$lib/queries'
+import { getSettings } from '../utils/queries'
 
 export async function get() {
   try {

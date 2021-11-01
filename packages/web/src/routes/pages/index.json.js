@@ -1,5 +1,5 @@
 import client from '$lib/client'
-import { getAllPages } from '$lib/queries'
+import { getAllPages } from '../../utils/queries'
 
 export async function get() {
   try {

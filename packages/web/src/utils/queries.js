@@ -16,7 +16,10 @@ const getPageBySlug = `*
   [_type == 'page' && slug.current == $slug && slug.current != 'home']
   ${pageBlocks}[0]`
 
+const getSettings = `*[_type == 'settings']`
+
 export {
   getAllPages,
   getPageBySlug,
+  getSettings,
 }
