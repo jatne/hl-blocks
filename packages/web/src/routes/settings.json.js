@@ -5,8 +5,6 @@ export async function get() {
   try {
     const data = await client.fetch(getMenus)
 
-    console.log(data)
-
     return {
       status: 200,
       body: {

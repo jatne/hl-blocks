@@ -32,7 +32,10 @@ const menuLinkItems = `
     "external": false,
     defined(label) => {
       label
-    }
+    },
+    linkInternal->_id == "frontPage" => {
+      "url": "/"
+    },
   }
 `
 
