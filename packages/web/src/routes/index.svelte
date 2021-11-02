@@ -4,11 +4,10 @@
 	export const prerender = true
 
 	export async function load({ fetch }) {
-		const allPages = await fetchQuery({ fetch, dataJson: '/pages.json' })
-
+		const frontPageData = await fetchQuery({ fetch, dataJson: '/index.json' })
 		return {
 			props: {
-				allPages,
+				frontPageData,
 			},
 		}
 	}
@@ -17,25 +16,13 @@
 <script>
 	import PageBuilder from '$lib/page-builder/PageBuilder.svelte'
 
-	export let allPages
+	export let frontPageData
 </script>
 
 <div class="container">
 	<div>
-		<h1>All pages - GROQ</h1>
-
-		{#each allPages as page}
-			<hr />
-			<h2>{page.name} <small>({page.slug})</small></h2>
-			<PageBuilder blocks={page.content} />
-			{#if page.imageFeatured}
-				<img
-					src={page.imageFeatured.url}
-					alt={page.imageFeatured.originalFilename}
-				/>
-			{/if}
-			<hr />
-		{/each}
+		{frontPageData.name}
+		<PageBuilder blocks={frontPageData.content} />
 	</div>
 </div>
 
