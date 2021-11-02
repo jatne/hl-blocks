@@ -12,6 +12,12 @@ const pageBlocks = `{
 
 const getAllPages = `*[_type == 'page']${pageBlocks}`
 
+const getFrontPage = `
+  *[_type == 'page' && _id == 'frontPage']
+  ${pageBlocks}
+  [0]
+`
+
 const getPageBySlug = `
   *[_type == 'page' && slug.current == $slug && slug.current != 'home']
   ${pageBlocks}
@@ -57,6 +63,7 @@ const getMenus = `
 
 export {
   getAllPages,
+  getFrontPage,
   getPageBySlug,
   getSettingsDocs,
   getMenus,
