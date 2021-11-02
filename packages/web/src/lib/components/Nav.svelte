@@ -1,7 +1,21 @@
-<nav>
-	<ul>
-		<li><a sveltekit:prefetch href="/">Home</a></li>
-		<li><a sveltekit:prefetch href="/about">About</a></li>
-		<li><a sveltekit:prefetch href="/contact">Contact</a></li>
-	</ul>
-</nav>
+<script>
+	export let items = []
+</script>
+
+{#if items.length}
+	<nav>
+		<ul>
+			{#each items as { url, external, label }}
+				<li>
+					<a
+						sveltekit:prefetch
+						href={url}
+						target={external ? '_blank' : '_self'}
+					>
+						{label}
+					</a>
+				</li>
+			{/each}
+		</ul>
+	</nav>
+{/if}
