@@ -7,6 +7,7 @@ import post from './documents/post'
 import author from './documents/author'
 import siteSettings from './documents/siteSettings'
 import navMenu from './documents/navMenu'
+import category from './documents/category'
 
 // Components
 import emptySpace from './components/emptySpace'
@@ -21,6 +22,7 @@ export default createSchema({
     author,
     siteSettings,
     navMenu,
+    category,
 
     // components:
     emptySpace,
