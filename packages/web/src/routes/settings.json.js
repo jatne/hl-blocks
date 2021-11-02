@@ -1,9 +1,11 @@
 import client from '$lib/client'
-import { getSettings } from '../utils/queries'
+import { getMenus } from '../utils/queries'
 
 export async function get() {
   try {
-    const data = await client.fetch(getSettings)
+    const data = await client.fetch(getMenus)
+
+    console.log(data)
 
     return {
       status: 200,
