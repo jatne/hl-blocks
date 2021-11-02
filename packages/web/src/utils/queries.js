@@ -12,14 +12,49 @@ const pageBlocks = `{
 
 const getAllPages = `*[_type == 'page']${pageBlocks}`
 
-const getPageBySlug = `*
-  [_type == 'page' && slug.current == $slug && slug.current != 'home']
-  ${pageBlocks}[0]`
+const getPageBySlug = `
+  *[_type == 'page' && slug.current == $slug && slug.current != 'home']
+  ${pageBlocks}
+  [0]
+`
 
-const getSettings = `*[_type == 'settings']`
+const getSettingsDocs = `*[_type == 'siteSettings'][0]`
+
+const menuLinkItems = `
+  linkType == "external" => {
+    label,
+    "url": linkExternal,
+    "external": true,
+  },
+  linkType == "internal" => {
+    "label": linkInternal->name,
+    "url": '/' + linkInternal->slug.current,
+    "external": false,
+    defined(label) => {
+      label
+    }
+  }
+`
+
+const getMenus = `
+  ${getSettingsDocs}
+  {
+    "navMenuHeader": navMenuHeader->items[],
+    "navMenuFooter": navMenuFooter->items[],
+  }
+  {
+    navMenuHeader[] {
+      ${menuLinkItems}
+    },
+    navMenuFooter[] {
+      ${menuLinkItems}
+    }
+  }
+`
 
 export {
   getAllPages,
   getPageBySlug,
-  getSettings,
+  getSettingsDocs,
+  getMenus,
 }
