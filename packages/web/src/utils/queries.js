@@ -10,8 +10,6 @@ const pageBlocks = `{
   }
 }`
 
-const getAllPages = `*[_type == 'page']${pageBlocks}`
-
 const getFrontPage = `
   *[_type == 'page' && _id == 'frontPage']
   ${pageBlocks}
@@ -62,7 +60,6 @@ const getMenus = `
 `
 
 export {
-  getAllPages,
   getFrontPage,
   getPageBySlug,
   getSettingsDocs,
