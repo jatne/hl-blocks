@@ -7,13 +7,11 @@
 		<ul>
 			{#each items as { url, external, label }}
 				<li>
-					<a
-						sveltekit:prefetch
-						href={url}
-						target={external ? '_blank' : '_self'}
-					>
-						{label}
-					</a>
+					{#if external}
+						<a href={url} target="_blank">{label}</a>
+					{:else}
+						<a sveltekit:prefetch href={url}>{label}</a>
+					{/if}
 				</li>
 			{/each}
 		</ul>
