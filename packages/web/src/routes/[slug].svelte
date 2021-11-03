@@ -18,10 +18,8 @@
 
 <script>
 	export let pageData
-
-	const { name } = pageData
 </script>
 
 <article>
-	<h1>{name}</h1>
+	<h1>{pageData.name}</h1>
 </article>
