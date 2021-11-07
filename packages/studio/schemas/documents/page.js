@@ -34,6 +34,12 @@ export default {
         { type: 'emptySpace' },
         { type: 'image' },
         { type: 'richEditor' },
+        {
+          name: 'featureBox',
+          title: 'Feature Box',
+          type: 'reference',
+          to: [{type: 'featureBox'}]
+        },
       ]
     },
   ],

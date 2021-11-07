@@ -1,5 +1,6 @@
 import S from '@sanity/desk-tool/structure-builder'
-import { GoPackage } from 'react-icons/go';
+import { GoPackage } from 'react-icons/go'
+import featureBox from './components/featureBox'
 
 export default S.listItem()
   .title('Reusable Components')
@@ -7,4 +8,7 @@ export default S.listItem()
   .child(
     S.list()
       .title('Modules')
+      .items([
+        featureBox,
+      ])
   )
