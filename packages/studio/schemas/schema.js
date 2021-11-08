@@ -9,6 +9,7 @@ import siteSettings from './documents/siteSettings'
 import navMenu from './documents/navMenu'
 import category from './documents/category'
 import featureBox from './documents/featureBox'
+import slider from './documents/slider'
 
 // Components
 import emptySpace from './components/emptySpace'
@@ -25,6 +26,7 @@ export default createSchema({
     navMenu,
     category,
     featureBox,
+    slider,
 
     // components:
     emptySpace,

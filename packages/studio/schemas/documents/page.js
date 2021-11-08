@@ -40,6 +40,12 @@ export default {
           type: 'reference',
           to: [{type: 'featureBox'}]
         },
+        {
+          name: 'slider',
+          title: 'Slider',
+          type: 'reference',
+          to: [{type: 'slider'}]
+        },
       ]
     },
   ],
