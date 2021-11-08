@@ -6,7 +6,10 @@ const pageBlocks = `{
     ...,
     defined(_type == 'image') => {
       "asset": asset->
-    }
+    },
+    defined(_type == 'featureBox') => {
+      "features": @->features
+    },
   }
 }`
 
