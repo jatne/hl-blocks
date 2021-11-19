@@ -10,8 +10,10 @@ import navMenu from './documents/navMenu'
 import category from './documents/category'
 import featureBox from './documents/featureBox'
 import slider from './documents/slider'
+import slices from './documents/slices'
 
 // Components
+import pageBuilder from './components/pageBuilder'
 import emptySpace from './components/emptySpace'
 import richEditor from './components/richEditor'
 
@@ -27,8 +29,10 @@ export default createSchema({
     category,
     featureBox,
     slider,
+    slices,
 
     // components:
+    pageBuilder,
     emptySpace,
     richEditor,
   ]),
