@@ -27,26 +27,9 @@ export default {
       },
     },
     {
-      title: 'Page Sections',
+      title: 'Page Builder',
       name: 'content',
-      type: 'array',
-      of: [
-        { type: 'emptySpace' },
-        { type: 'image' },
-        { type: 'richEditor' },
-        {
-          name: 'featureBox',
-          title: 'Feature Box',
-          type: 'reference',
-          to: [{type: 'featureBox'}]
-        },
-        {
-          name: 'slider',
-          title: 'Slider',
-          type: 'reference',
-          to: [{type: 'slider'}]
-        },
-      ]
+      type: 'pageBuilder',
     },
   ],
 }
