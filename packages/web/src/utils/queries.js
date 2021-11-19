@@ -1,15 +1,24 @@
+const modules = `
+  ...,
+  _type == "image" => {
+    "asset": asset->
+  },
+  _type == "featureBox" => {
+    "features": @->features
+  },
+`
+
 const pageBlocks = `{
   name,
   "slug": slug.current,
   "imageFeatured": imageFeatured.asset->,
   content[] {
-    ...,
-    defined(_type == 'image') => {
-      "asset": asset->
-    },
-    defined(_type == 'featureBox') => {
-      "features": @->features
-    },
+    ${modules}
+    _type == 'slice' => {
+      "content": @->content[] {
+        ${modules}
+      }
+    }
   }
 }`
 

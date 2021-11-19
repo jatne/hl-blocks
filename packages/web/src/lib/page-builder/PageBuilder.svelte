@@ -12,6 +12,8 @@
 			<Image asset={block.asset} />
 		{:else if block._type === 'richEditor'}
 			<RichEditor content={block.content} />
+		{:else if block._type === 'slice'}
+			<svelte:self blocks={block.content} />
 		{/if}
 	{/each}
 {/if}
