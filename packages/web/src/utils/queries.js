@@ -6,6 +6,12 @@ const modules = `
   _type == "featureBox" => {
     "features": @->features
   },
+  _type == "slider" => {
+    "slides": @->slides[] {
+      ...,
+      "image": image.asset->
+    }
+  },
 `
 
 const pageBlocks = `{
