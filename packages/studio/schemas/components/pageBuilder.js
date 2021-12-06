@@ -34,5 +34,28 @@ export default {
         }
       }
     },
+    {
+      name: 'testimonials',
+      title: 'Testimonials',
+      type: 'object',
+      preview: {
+        select: {
+          status: 'isActive'
+        },
+        prepare({status}) {
+          return {
+            title: 'Testimonials',
+            subtitle: status ? '✔️ Active' : '❌ Not Active',
+          }
+        }
+      },
+      fields: [
+        {
+          name: 'isActive',
+          title: 'Testimonials: is active',
+          type: 'boolean',
+        }
+      ]
+    },
   ]
 }
