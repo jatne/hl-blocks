@@ -11,6 +11,7 @@ import category from './documents/category'
 import featureBox from './documents/featureBox'
 import slider from './documents/slider'
 import slices from './documents/slices'
+import testimonials from './documents/testimonials'
 
 // Components
 import pageBuilder from './components/pageBuilder'
@@ -30,6 +31,7 @@ export default createSchema({
     featureBox,
     slider,
     slices,
+    testimonials,
 
     // components:
     pageBuilder,

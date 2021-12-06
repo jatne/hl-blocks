@@ -3,6 +3,7 @@ import { GoPackage } from 'react-icons/go'
 import featureBox from './components/featureBox'
 import slider from './components/slider'
 import slices from './components/slices'
+import testimonial from './components/testimonial'
 
 export default S.listItem()
   .title('Reusable Components')
@@ -15,5 +16,7 @@ export default S.listItem()
         featureBox,
         S.divider(),
         slices,
+        S.divider(),
+        testimonial,
       ])
   )
