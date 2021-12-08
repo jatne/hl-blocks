@@ -57,5 +57,28 @@ export default {
         }
       ]
     },
+    {
+      name: 'postsGrid',
+      title: 'Posts Grid',
+      type: 'object',
+      preview: {
+        select: {
+          status: 'isActive'
+        },
+        prepare({status}) {
+          return {
+            title: 'Posts Grid',
+            subtitle: status ? '✔️ Active' : '❌ Not Active',
+          }
+        }
+      },
+      fields: [
+        {
+          name: 'isActive',
+          title: 'Posts Grid: is active',
+          type: 'boolean',
+        }
+      ]
+    },
   ]
 }
