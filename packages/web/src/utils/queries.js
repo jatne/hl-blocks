@@ -12,6 +12,16 @@ const modules = `
       "image": image.asset->
     }
   },
+  _type == "testimonials" => {
+    "testimonials": *[
+      ^.isActive && _type == 'testimonial'
+    ]{
+      name,
+      company,
+      text,
+      "image": image.asset->
+    }
+  },
 `
 
 const pageBlocks = `{
