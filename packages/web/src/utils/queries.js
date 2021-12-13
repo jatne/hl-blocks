@@ -22,6 +22,19 @@ const modules = `
       "image": image.asset->
     }
   },
+  _type == "postsGrid" => {
+    "posts": *[
+      ^.isActive && _type == 'post'
+    ]{
+      name,
+      slug,
+      text,
+      excerpt,
+      "imageFeatured": imageFeatured.asset->,
+      "author": author[]->,
+      "category": category[]->,
+    }
+  },
 `
 
 const pageBlocks = `{
