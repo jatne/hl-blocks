@@ -17,9 +17,9 @@
 </script>
 
 <script>
+	import PageBuilder from '$lib/page-builder/PageBuilder.svelte'
+
 	export let pageData
 </script>
 
-<article>
-	<h1>{pageData.name}</h1>
-</article>
+<PageBuilder blocks={pageData.content} />

@@ -14,21 +14,22 @@
 
 <script>
 	import '../app.css'
-	import Nav from '$lib/components/Nav.svelte'
+	import Header from '$lib/components/Header.svelte'
+	import Footer from '$lib/components/Footer.svelte'
 
 	export let settings
 
 	const { navMenuHeader, navMenuFooter } = settings
 </script>
 
-<div class="mx-auto max-w-5xl px-4 sm:px-6 lg-px-8">
-	<header>
-		<Nav items={navMenuHeader} />
-	</header>
-	<main class="mx-auto max-w-3xl">
-		<slot />
-	</main>
-	<footer>
-		<Nav items={navMenuFooter} />
-	</footer>
+<div class="min-h-screen bg-coolGray-100 text-coolGray-800">
+	<div class="p-6 space-y-8">
+		<Header items={navMenuHeader} />
+		<main>
+			<div class="container mx-auto space-y-16">
+				<slot />
+			</div>
+		</main>
+		<Footer items={navMenuFooter} />
+	</div>
 </div>
