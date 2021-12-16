@@ -19,18 +19,4 @@
 	export let frontPageData
 </script>
 
-<div class="container">
-	<div>
-		{frontPageData.name}
-		<PageBuilder blocks={frontPageData.content} />
-	</div>
-</div>
-
-<style>
-	.container {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		column-gap: 10em;
-		padding: 2em;
-	}
-</style>
+<PageBuilder blocks={frontPageData.content} />
