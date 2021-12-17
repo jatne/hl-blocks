@@ -73,7 +73,7 @@ const menuLinkItems = `
   },
   linkType == "internal" => {
     "label": linkInternal->name,
-    "url": '/' + linkInternal->slug.current + '/,
+    "url": '/' + linkInternal->slug.current + '/',
     "external": false,
     defined(label) => {
       label
