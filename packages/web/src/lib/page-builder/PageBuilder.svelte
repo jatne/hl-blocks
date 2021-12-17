@@ -1,5 +1,5 @@
 <script>
-	import { EmptySpace, Image, RichEditor } from '$lib/page-builder'
+	import { EmptySpace, Image, RichEditor, Features } from '$lib/page-builder'
 
 	export let blocks = false
 </script>
@@ -12,6 +12,8 @@
 			<Image asset={block.asset} />
 		{:else if block._type === 'richEditor'}
 			<RichEditor content={block.content} />
+		{:else if block._type === 'featureBox'}
+			<Features content={block.features} />
 		{:else if block._type === 'slice'}
 			<svelte:self blocks={block.content} />
 		{/if}
