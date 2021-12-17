@@ -28,14 +28,12 @@
 	</style>
 </svelte:head>
 
-<div class="min-h-screen bg-gray-100 text-gray-800">
-	<div class="p-6 space-y-8">
-		<Header items={navMenuHeader} />
-		<main>
-			<div class="container mx-auto space-y-16">
-				<slot />
-			</div>
-		</main>
-		<Footer items={navMenuFooter} />
-	</div>
+<div class="min-h-screen bg-gray-100 text-gray-800 px-6 py-2">
+	<Header items={navMenuHeader} />
+	<main class="py-6">
+		<div class="container mx-auto">
+			<slot />
+		</div>
+	</main>
+	<Footer items={navMenuFooter} />
 </div>

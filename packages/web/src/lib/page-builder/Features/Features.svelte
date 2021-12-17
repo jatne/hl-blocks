@@ -4,9 +4,7 @@
 </script>
 
 {#if content.length > 0}
-	<dl
-		class="mt-12 space-y-10 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-12 lg:grid-cols-4 lg:gap-x-8r"
-	>
+	<dl class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm-gap-8">
 		{#each content as { title, description }, i}
 			<Feature {title} {description} />
 		{/each}

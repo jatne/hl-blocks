@@ -9,6 +9,7 @@
 		@apply w-full;
 		@apply m-0;
 		@apply block;
+		@apply py-8;
 	}
 
 	.emptySpace--large {
@@ -16,6 +17,6 @@
 	}
 
 	.emptySpace--small {
-		@apply py-6;
+		@apply py-4;
 	}
 </style>
