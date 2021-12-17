@@ -28,7 +28,7 @@
 	</style>
 </svelte:head>
 
-<div class="min-h-screen bg-coolGray-100 text-coolGray-800">
+<div class="min-h-screen bg-gray-100 text-gray-800">
 	<div class="p-6 space-y-8">
 		<Header items={navMenuHeader} />
 		<main>
