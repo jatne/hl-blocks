@@ -19,4 +19,6 @@
 	export let frontPageData
 </script>
 
-<PageBuilder blocks={frontPageData.content} />
+<div class="space-y-6">
+	<PageBuilder blocks={frontPageData.content} />
+</div>
