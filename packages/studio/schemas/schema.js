@@ -17,6 +17,7 @@ import testimonials from './documents/testimonials'
 import pageBuilder from './components/pageBuilder'
 import emptySpace from './components/emptySpace'
 import richEditor from './components/richEditor'
+import titleWithText from './components/titleWithText'
 
 export default createSchema({
   name: 'default',
@@ -37,5 +38,6 @@ export default createSchema({
     pageBuilder,
     emptySpace,
     richEditor,
+    titleWithText,
   ]),
 })
