@@ -81,5 +81,6 @@ export default {
       ]
     },
     { type: 'titleWithText' },
+    { type: 'columns' },
   ]
 }

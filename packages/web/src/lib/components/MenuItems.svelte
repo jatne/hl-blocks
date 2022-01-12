@@ -19,7 +19,7 @@
 				sveltekit:prefetch
 				href={url}
 				class="flex items-center px-4 -mb-1 border-b-2 border-transparent"
-				class:active={$page.path == url}
+				class:active={$page.url.pathname == url}
 			>
 				{label}
 			</a>
