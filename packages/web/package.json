@@ -11,6 +11,7 @@
 	"devDependencies": {
 		"@portabletext/svelte": "^0.2.0",
 		"@sanity/client": "^2.23.2",
+		"@sveltejs/adapter-netlify": "^1.0.0-next.38",
 		"@sveltejs/adapter-static": "^1.0.0-next.26",
 		"@sveltejs/kit": "^1.0.0-next.225",
 		"@tsconfig/svelte": "^3.0.0",
