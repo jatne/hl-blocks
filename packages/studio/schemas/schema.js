@@ -18,6 +18,7 @@ import pageBuilder from './components/pageBuilder'
 import emptySpace from './components/emptySpace'
 import richEditor from './components/richEditor'
 import titleWithText from './components/titleWithText'
+import columns from './components/columns'
 
 export default createSchema({
   name: 'default',
@@ -39,5 +40,6 @@ export default createSchema({
     emptySpace,
     richEditor,
     titleWithText,
+    columns,
   ]),
 })
