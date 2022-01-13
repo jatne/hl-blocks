@@ -37,15 +37,43 @@ const modules = `
   },
 `
 
+const columns = `
+_type == 'columns' => {
+  "content": {
+    "column_1": column_1[] {
+      ${modules}
+    },
+    "column_2": column_2[] {
+      ${modules}
+      _type == 'slice' => {
+        "content": @->content[] {
+          ${modules}
+        }
+      }
+    },
+    "column_3": column_3[] {
+      ${modules}
+      _type == 'slice' => {
+        "content": @->content[] {
+          ${modules}
+        }
+      }
+    },
+  }
+},
+`
+
 const pageBlocks = `{
   name,
   "slug": slug.current,
   "imageFeatured": imageFeatured.asset->,
   content[] {
     ${modules}
+    ${columns}
     _type == 'slice' => {
       "content": @->content[] {
         ${modules}
+        ${columns}
       }
     }
   }
