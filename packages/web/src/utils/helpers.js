@@ -1,3 +1,6 @@
+import client from '$lib/client'
+import imageUrlBuilder from '@sanity/image-url'
+
 export async function fetchQuery({fetch, dataJson }) {
   try {
     const res = await fetch(dataJson)
@@ -11,4 +14,10 @@ export async function fetchQuery({fetch, dataJson }) {
     console.error(err)
     return []
   }
+}
+
+const builder = imageUrlBuilder(client)
+
+export function imageUrl(source) {
+  return builder.image(source)
 }
