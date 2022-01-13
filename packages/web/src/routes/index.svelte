@@ -20,5 +20,5 @@
 </script>
 
 <div class="space-y-6">
-	<PageBuilder blocks={frontPageData.content} />
+	<PageBuilder blocks={frontPageData?.content} />
 </div>

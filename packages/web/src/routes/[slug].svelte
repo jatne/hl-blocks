@@ -22,4 +22,4 @@
 	export let pageData
 </script>
 
-<PageBuilder blocks={pageData.content} />
+<PageBuilder blocks={pageData?.content} />
