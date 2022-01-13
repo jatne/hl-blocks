@@ -5,6 +5,7 @@
 		RichEditor,
 		Features,
 		TitleWithText,
+		Columns,
 	} from '$lib/page-builder'
 
 	export let blocks = false
@@ -14,7 +15,6 @@
 
 {#if blocks}
 	{#each blocks as block}
-		<!-- <section class="py-2"> -->
 		{#if block._type === 'emptySpace'}
 			<EmptySpace size={block.value} />
 		{:else if block._type === 'image'}
@@ -31,7 +31,8 @@
 			/>
 		{:else if block._type === 'slice'}
 			<svelte:self blocks={block.content} />
+		{:else if block._type === 'columns'}
+			<Columns style={block.columnNumber} content={block.content} />
 		{/if}
-		<!-- </section> -->
 	{/each}
 {/if}
