@@ -11,7 +11,7 @@
 		class="h-8"
 	>
 		<path
-			class="stroke-cyan-500"
+			class="stroke-primary-500"
 			stroke-width="2"
 			d="M1 1h26v12H1zM13 27h6v4h-6zM23 27h4v4h-4zM1 17h8v14H1zM13 17h14v6H13z"
 		/>
