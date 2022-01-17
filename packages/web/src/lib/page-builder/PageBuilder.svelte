@@ -6,6 +6,7 @@
 		Features,
 		TitleWithText,
 		Columns,
+		Slider,
 	} from '$lib/page-builder'
 
 	export let blocks = false
@@ -33,6 +34,8 @@
 			<svelte:self blocks={block.content} />
 		{:else if block._type === 'columns'}
 			<Columns style={block.columnNumber} content={block.content} />
+		{:else if block._type === 'slider'}
+			<Slider slides={block.slides} />
 		{/if}
 	{/each}
 {/if}

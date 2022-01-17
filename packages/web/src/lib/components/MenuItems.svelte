@@ -31,6 +31,6 @@
 	.active {
 		@apply underline;
 		@apply decoration-2;
-		@apply decoration-cyan-500;
+		@apply decoration-primary-500;
 	}
 </style>
