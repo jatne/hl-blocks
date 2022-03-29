@@ -7,11 +7,10 @@
 		TitleWithText,
 		Columns,
 		Slider,
+		PostsGrid,
 	} from '$lib/page-builder'
 
 	export let blocks = false
-
-	console.log(blocks)
 </script>
 
 {#if blocks}
@@ -36,6 +35,8 @@
 			<Columns style={block.columnNumber} content={block.content} />
 		{:else if block._type === 'slider'}
 			<Slider slides={block.slides} />
+		{:else if block._type === 'postsGrid'}
+			<PostsGrid posts={block.posts} isActive={block.isActive} />
 		{/if}
 	{/each}
 {/if}

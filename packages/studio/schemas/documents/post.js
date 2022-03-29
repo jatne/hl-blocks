@@ -17,6 +17,12 @@ export default {
       },
     },
     {
+      title: 'Date',
+      name: 'date',
+      type: 'date',
+      initialValue: (new Date()).toISOString()
+    },
+    {
       title: 'Image featured',
       name: 'imageFeatured',
       type: 'image',
@@ -47,4 +53,10 @@ export default {
       ]
     },
   ],
+  preview: {
+    select: {
+      title: 'name',
+      subtitle: 'date'
+    }
+  }
 }

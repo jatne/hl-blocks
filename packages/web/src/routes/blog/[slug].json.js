@@ -1,11 +1,11 @@
 import client from '$lib/client'
-import { getPageBySlug } from '../utils/queries'
+import { getPostBySlug } from '../utils/queries'
 
 export async function get({params}) {
   const { slug } = params
 
   try {
-    const data = await client.fetch(getPageBySlug, { slug })
+    const data = await client.fetch(getPostBySlug, { slug })
 
     return {
       status: 200,
