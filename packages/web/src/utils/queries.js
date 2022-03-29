@@ -29,7 +29,11 @@ const modules = `
       name,
       slug,
       text,
-      excerpt,
+      "excerpt": coalesce(
+        excerpt,
+        pt::text(content)
+      ),
+      content,
       "imageFeatured": imageFeatured.asset->,
       "author": author[]->,
       "category": category[]->,
@@ -91,6 +95,13 @@ const getPageBySlug = `
   [0]
 `
 
+
+const getPostBySlug = `
+  *[_type == 'post' && slug.current == $slug]
+  ${pageBlocks}
+  [0]
+`
+
 const getSettingsDocs = `*[_type == 'siteSettings'][0]`
 
 const menuLinkItems = `
@@ -131,6 +142,7 @@ const getMenus = `
 export {
   getFrontPage,
   getPageBySlug,
+  getPostBySlug,
   getSettingsDocs,
   getMenus,
 }
