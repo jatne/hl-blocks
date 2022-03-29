@@ -29,6 +29,7 @@ const modules = `
       name,
       slug,
       text,
+      date,
       "excerpt": coalesce(
         excerpt,
         pt::text(content)
@@ -37,7 +38,7 @@ const modules = `
       "imageFeatured": imageFeatured.asset->,
       "author": author[]->,
       "category": category[]->,
-    }
+    } | order(date desc)
   },
 `
 
