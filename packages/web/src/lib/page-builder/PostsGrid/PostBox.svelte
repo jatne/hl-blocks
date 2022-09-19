@@ -3,8 +3,6 @@
 	import Category from './parts/Category.svelte'
 
 	export let post = {}
-
-	console.log(post)
 </script>
 
 <article class="bg-white">
