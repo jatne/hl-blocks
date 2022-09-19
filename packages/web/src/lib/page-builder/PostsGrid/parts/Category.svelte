@@ -5,7 +5,7 @@
 {#if category.length}
 	{#each category as { name, slug }}
 		<a
-			sveltekit:prefetch
+			data-sveltekit-prefetch
 			href="/blog/category/{slug.current}"
 			class="font-medium text-gray-900 hover:text-purple-700"
 		>
