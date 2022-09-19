@@ -35,11 +35,11 @@
 	.slide {
 		background-size: cover;
 		background-position: 50% 50%;
-    background-blend-mode: multiply;
+		background-blend-mode: multiply;
 		@apply bg-primary-600;
 	}
 
 	:global(:root) {
-		--swiper-theme-color: theme('colors.primary.500')
+		--swiper-theme-color: theme('colors.primary.500');
 	}
 </style>

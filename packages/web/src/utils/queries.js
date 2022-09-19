@@ -29,6 +29,10 @@ const modules = `
       name,
       slug,
       text,
+      "date": coalesce(
+        date,
+        string(_createdAt)
+      ),
       excerpt,
       "imageFeatured": imageFeatured.asset->,
       "author": author[]->,

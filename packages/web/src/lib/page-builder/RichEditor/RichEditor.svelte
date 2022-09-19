@@ -1,5 +1,5 @@
 <script>
-	import PortableText from '@portabletext/svelte'
+	import { PortableText } from '@portabletext/svelte'
 	import LinkComponent from './LinkComponent.svelte'
 	export let content
 </script>

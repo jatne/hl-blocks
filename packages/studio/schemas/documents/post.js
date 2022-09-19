@@ -2,6 +2,9 @@ export default {
   title: 'Post',
   name: 'post',
   type: 'document',
+  initialValue: {
+    date: new Date(),
+  },
   fields: [
     {
       title: 'Title',
@@ -23,6 +26,11 @@ export default {
       options: {
         hotspot: true,
       },
+    },
+    {
+      title: 'Post date',
+      name: 'date',
+      type: 'datetime',
     },
     {
       title: 'Author',
