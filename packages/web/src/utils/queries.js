@@ -1,3 +1,17 @@
+const postData = `{
+  name,
+  slug,
+  text,
+  "date": coalesce(
+    date,
+    string(_createdAt)
+  ),
+  excerpt,
+  "imageFeatured": imageFeatured.asset->,
+  "author": author[]->,
+  "category": category[]->,
+}`
+
 const modules = `
   ...,
   _type == "image" => {
@@ -25,19 +39,8 @@ const modules = `
   _type == "postsGrid" => {
     "posts": *[
       ^.isActive && _type == 'post'
-    ]{
-      name,
-      slug,
-      text,
-      "date": coalesce(
-        date,
-        string(_createdAt)
-      ),
-      excerpt,
-      "imageFeatured": imageFeatured.asset->,
-      "author": author[]->,
-      "category": category[]->,
-    }
+    ]
+    ${postData}
   },
 `
 
@@ -93,6 +96,16 @@ const getPageBySlug = `
   *[_type == 'page' && slug.current == $slug && slug.current != 'home']
   ${pageBlocks}
   [0]
+`
+
+const getPostBySlug = `
+  *[_type == 'post' && slug.current == $slug]
+  ${postData}
+  [0]
+`
+
+const getPosts = `
+  *[_type == 'post']
 `
 
 const getSettingsDocs = `*[_type == 'siteSettings'][0]`
