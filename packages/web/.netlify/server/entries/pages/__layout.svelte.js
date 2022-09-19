@@ -67,7 +67,7 @@ const MenuItems = (0, import_index_790fe6b2.c)(($$result, $$props, $$bindings, s
   $$unsubscribe_page();
   return `${(0, import_index_790fe6b2.e)(items, ({ url, external, label }) => {
     return `<li class="${"flex"}">${external ? `<a${(0, import_index_790fe6b2.b)("href", url, 0)} target="${"_blank"}" class="${"flex items-center px-4 -mb-1 border-b-2 border-transparent"}">${(0, import_index_790fe6b2.d)(label)}
-			</a>` : `<a sveltekit:prefetch${(0, import_index_790fe6b2.b)("href", url, 0)} class="${[
+			</a>` : `<a data-sveltekit-prefetch${(0, import_index_790fe6b2.b)("href", url, 0)} class="${[
       "flex items-center px-4 -mb-1 border-b-2 border-transparent svelte-b8nu5u",
       $page.url.pathname == url ? "active" : ""
     ].join(" ").trim()}">${(0, import_index_790fe6b2.d)(label)}

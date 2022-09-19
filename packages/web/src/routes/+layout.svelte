@@ -1,25 +1,11 @@
-<script context="module">
-	import { fetchQuery } from '../utils/helpers'
-
-	export async function load({ fetch }) {
-		const settings = await fetchQuery({ fetch, dataJson: '/settings.json' })
-
-		return {
-			props: {
-				settings,
-			},
-		}
-	}
-</script>
-
 <script>
 	import '../app.css'
 	import Header from '$lib/components/Header.svelte'
 	import Footer from '$lib/components/Footer.svelte'
 
-	export let settings
+	export let data
 
-	const { navMenuHeader, navMenuFooter } = settings
+	const { navMenuHeader, navMenuFooter } = data
 </script>
 
 <svelte:head>

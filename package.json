@@ -3,10 +3,10 @@
   "private": true,
   "scripts": {
     "dev": "lerna run dev --parallel",
-    "dev:web": "cd ./packages/web && npm run dev -- --open",
+    "dev:web": "cd ./packages/web && npm run dev",
     "dev:studio": "cd ./packages/studio && sanity start"
   },
   "devDependencies": {
-    "lerna": "^4.0.0"
+    "lerna": "^5.5.1"
   }
 }
