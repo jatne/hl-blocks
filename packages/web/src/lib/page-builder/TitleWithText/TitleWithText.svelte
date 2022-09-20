@@ -5,11 +5,7 @@
 </script>
 
 {#if title || text}
-	<div
-		class="max-w-3xl"
-		class:right={alignment === 'right'}
-		class:center={alignment === 'center'}
-	>
+	<div class="max-w-3xl" class:right={alignment === 'right'} class:center={alignment === 'center'}>
 		{#if title}
 			<h2 class="text-2xl font-bold tracking-tight sm:text-4xl text-gray-900">
 				{title}

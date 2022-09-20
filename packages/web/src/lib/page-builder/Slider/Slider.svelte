@@ -11,19 +11,11 @@
 </script>
 
 {#if slides.length}
-	<Swiper
-		modules={[Navigation, Pagination]}
-		slidesPerView={1}
-		navigation
-		pagination={{ clickable: true }}
-	>
+	<Swiper modules={[Navigation, Pagination]} slidesPerView={1} navigation pagination={{ clickable: true }}>
 		{#each slides as slide}
 			{@const slideBg = `url(${imageUrl(slide.image).url()})`}
 			<SwiperSlide>
-				<div
-					class="slide flex place-content-center items-center h-96 min-h-full"
-					style:background-image={slideBg}
-				>
+				<div class="slide flex place-content-center items-center h-96 min-h-full" style:background-image={slideBg}>
 					<span class="text-4xl font-bold text-primary-300">{slide.text}</span>
 				</div>
 			</SwiperSlide>

@@ -1,11 +1,11 @@
 const postData = `{
   name,
   slug,
-  text,
   "date": coalesce(
     date,
     string(_createdAt)
   ),
+  content,
   excerpt,
   "imageFeatured": imageFeatured.asset->,
   "author": author[]->,
@@ -146,8 +146,10 @@ const getMenus = `
 `
 
 export {
-  getFrontPage,
-  getPageBySlug,
-  getSettingsDocs,
-  getMenus,
+	getFrontPage,
+	getPageBySlug,
+	getSettingsDocs,
+	getMenus,
+	getPostBySlug,
+	getPosts,
 }

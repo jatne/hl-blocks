@@ -1,9 +1,10 @@
 import client from '$lib/client'
-import { getFrontPage } from '../../utils/queries'
+import { getPostBySlug } from '../../../utils/queries'
 
-export async function GET() {
+export async function GET(req) {
 	try {
-		const data = await client.fetch(getFrontPage)
+		const slug = req.params.slug
+		const data = await client.fetch(getPostBySlug, { slug })
 
 		return new Response(JSON.stringify({ data }), {
 			headers: {
