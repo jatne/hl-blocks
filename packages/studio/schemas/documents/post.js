@@ -54,5 +54,25 @@ export default {
         }
       ]
     },
+        {
+      title: 'Excerpt',
+      name: 'excerpt',
+      type: 'text',
+    },
+    {
+      name: 'content',
+      title: 'Post',
+      type: 'array',
+      of: [
+        { type: 'block'},
+      ]
+    },
   ],
+  preview: {
+    select: {
+      title: 'name',
+      subtitle: 'date',
+      media: 'imageFeatured',
+    }
+  }
 }
