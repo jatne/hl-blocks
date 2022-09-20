@@ -1,7 +1,6 @@
 const postData = `{
   name,
   slug,
-  text,
   "date": coalesce(
     date,
     string(_createdAt)

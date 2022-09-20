@@ -3,6 +3,6 @@
 	export let content
 </script>
 
-<div class="prose">
+<div class="prose max-w-none">
 	<PortableText value={content} />
 </div>

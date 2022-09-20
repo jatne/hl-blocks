@@ -5,16 +5,11 @@
 
 	export let post = {}
 
-	const prepareExcerpt = (text) =>
-		`${text.split(' ').splice(0, 30).join(' ')}...`
+	const prepareExcerpt = (text) => `${text.split(' ').splice(0, 30).join(' ')}...`
 </script>
 
 <article class="bg-white">
-	<a
-		data-sveltekit-prefetch
-		href="/blog/{post.slug.current}"
-		aria-label={post.name}
-	>
+	<a data-sveltekit-prefetch href="/blog/{post.slug.current}" aria-label={post.name}>
 		<img
 			src={imageUrl(post.imageFeatured).url()}
 			class="object-cover w-full h-56 mb-5 bg-center rounded"
