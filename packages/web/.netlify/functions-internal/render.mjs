@@ -1,16 +1,18 @@
-export const manifest = {
+import { init } from '../serverless.js';
+
+export const handler = init({
 	appDir: "_app",
 	assets: new Set(["favicon.png","robots.txt","svelte-welcome.png","svelte-welcome.webp"]),
 	mimeTypes: {".png":"image/png",".txt":"text/plain",".webp":"image/webp"},
 	_: {
 		entry: {"file":"_app/immutable/start-48f17a64.js","imports":["_app/immutable/start-48f17a64.js","_app/immutable/chunks/index-328d1cc5.js","_app/immutable/chunks/singletons-5a357f3a.js"],"stylesheets":[]},
 		nodes: [
-			() => import('./nodes/0.js'),
-			() => import('./nodes/1.js'),
-			() => import('./nodes/2.js'),
-			() => import('./nodes/3.js'),
-			() => import('./nodes/4.js'),
-			() => import('./nodes/5.js')
+			() => import('../server/nodes/0.js'),
+			() => import('../server/nodes/1.js'),
+			() => import('../server/nodes/2.js'),
+			() => import('../server/nodes/3.js'),
+			() => import('../server/nodes/4.js'),
+			() => import('../server/nodes/5.js')
 		],
 		routes: [
 			{
@@ -27,7 +29,7 @@ export const manifest = {
 				names: [],
 				types: [],
 				page: null,
-				endpoint: () => import('./entries/endpoints/frontpage.json/_server.js')
+				endpoint: () => import('../server/entries/endpoints/frontpage.json/_server.js')
 			},
 			{
 				id: "settings.json",
@@ -35,7 +37,7 @@ export const manifest = {
 				names: [],
 				types: [],
 				page: null,
-				endpoint: () => import('./entries/endpoints/settings.json/_server.js')
+				endpoint: () => import('../server/entries/endpoints/settings.json/_server.js')
 			},
 			{
 				id: "blog/[slug].json",
@@ -43,15 +45,7 @@ export const manifest = {
 				names: ["slug"],
 				types: [null],
 				page: null,
-				endpoint: () => import('./entries/endpoints/blog/_slug_.json/_server.js')
-			},
-			{
-				id: "blog/[slug]",
-				pattern: /^\/blog\/([^/]+?)\/?$/,
-				names: ["slug"],
-				types: [null],
-				page: { layouts: [0,2], errors: [1,,], leaf: 5 },
-				endpoint: null
+				endpoint: () => import('../server/entries/endpoints/blog/_slug_.json/_server.js')
 			},
 			{
 				id: "[slug].json",
@@ -59,15 +53,7 @@ export const manifest = {
 				names: ["slug"],
 				types: [null],
 				page: null,
-				endpoint: () => import('./entries/endpoints/_slug_.json/_server.js')
-			},
-			{
-				id: "[slug]",
-				pattern: /^\/([^/]+?)\/?$/,
-				names: ["slug"],
-				types: [null],
-				page: { layouts: [0], errors: [1], leaf: 4 },
-				endpoint: null
+				endpoint: () => import('../server/entries/endpoints/_slug_.json/_server.js')
 			}
 		],
 		matchers: async () => {
@@ -75,4 +61,4 @@ export const manifest = {
 			return {  };
 		}
 	}
-};
+});
