@@ -20,7 +20,7 @@
 	<div class="px-3">
 		<p class="mb-3 text-sm font-normal text-gray-500">
 			<Category category={post.category} />
-			{post.date ? `• ${new Date(post.date).toDateString()}` : ''}
+			{post.publishDate ? `• ${new Date(post.publishDate).toDateString()}` : ''}
 		</p>
 		<h2 class="mb-2 text-lg font-semibold text-gray-900">
 			<a

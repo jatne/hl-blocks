@@ -1,8 +1,8 @@
 const postData = `{
   name,
   slug,
-  "date": coalesce(
-    date,
+  "publishDate": coalesce(
+    publishDate,
     string(_createdAt)
   ),
   content,
@@ -41,6 +41,7 @@ const modules = `
       ^.isActive && _type == 'post'
     ]
     ${postData}
+    | order(publishDate desc)
   },
 `
 
@@ -105,7 +106,7 @@ const getPostBySlug = `
 `
 
 const getPosts = `
-  *[_type == 'post']
+  *[_type == 'post'] | order(publishDate desc)
 `
 
 const getSettingsDocs = `*[_type == 'siteSettings'][0]`
@@ -145,11 +146,4 @@ const getMenus = `
   }
 `
 
-export {
-	getFrontPage,
-	getPageBySlug,
-	getSettingsDocs,
-	getMenus,
-	getPostBySlug,
-	getPosts,
-}
+export { getFrontPage, getPageBySlug, getSettingsDocs, getMenus, getPostBySlug, getPosts }

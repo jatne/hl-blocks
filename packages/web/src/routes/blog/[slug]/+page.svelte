@@ -16,8 +16,8 @@
 				{data.postData.name}
 			</h1>
 			<p class="text-base font-light text-gray-500 dark:text-gray-400">
-				<time pubdate datetime={data.postData.date} title={data.postData.date}
-					>{new Date(data.postData.date).toDateString()}</time
+				<time pubdate datetime={data.postData.publishDate} title={data.postData.publishDate}
+					>{new Date(data.postData.publishDate).toDateString()}</time
 				>
 			</p>
 		</header>
