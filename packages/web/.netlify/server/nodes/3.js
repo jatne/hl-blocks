@@ -1,33 +1,8 @@
-var __create = Object.create;
-var __defProp = Object.defineProperty;
-var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
-var __getOwnPropNames = Object.getOwnPropertyNames;
-var __getProtoOf = Object.getPrototypeOf;
-var __hasOwnProp = Object.prototype.hasOwnProperty;
-var __markAsModule = (target) => __defProp(target, "__esModule", { value: true });
-var __export = (target, all) => {
-  __markAsModule(target);
-  for (var name in all)
-    __defProp(target, name, { get: all[name], enumerable: true });
-};
-var __reExport = (target, module3, desc) => {
-  if (module3 && typeof module3 === "object" || typeof module3 === "function") {
-    for (let key of __getOwnPropNames(module3))
-      if (!__hasOwnProp.call(target, key) && key !== "default")
-        __defProp(target, key, { get: () => module3[key], enumerable: !(desc = __getOwnPropDesc(module3, key)) || desc.enumerable });
-  }
-  return target;
-};
-var __toModule = (module3) => {
-  return __reExport(__markAsModule(__defProp(module3 != null ? __create(__getProtoOf(module3)) : {}, "default", module3 && module3.__esModule && "default" in module3 ? { get: () => module3.default, enumerable: true } : { value: module3, enumerable: true })), module3);
-};
-__export(exports, {
-  css: () => css,
-  entry: () => entry,
-  js: () => js,
-  module: () => module2
-});
-var module2 = __toModule(require("../entries/pages/_slug_.svelte.js"));
-const entry = "pages/_slug_.svelte-72cecf34.js";
-const js = ["pages/_slug_.svelte-72cecf34.js", "chunks/vendor-02363968.js", "chunks/helpers-6eb64bb9.js", "chunks/PageBuilder-cf5f0e8a.js"];
-const css = ["assets/PageBuilder-e30ea16b.css"];
+import * as shared from '../entries/pages/_page.js';
+
+export const index = 3;
+export const component = async () => (await import('../entries/pages/_page.svelte.js')).default;
+export const file = '_app/immutable/components/pages/_page.svelte-3d275bf9.js';
+export { shared };
+export const imports = ["_app/immutable/components/pages/_page.svelte-3d275bf9.js","_app/immutable/chunks/index-328d1cc5.js","_app/immutable/chunks/PageBuilder-c7a7341c.js","_app/immutable/chunks/helpers-35449062.js","_app/immutable/chunks/RichEditor-2cd770ad.js","_app/immutable/modules/pages/_page.js-0634e68b.js","_app/immutable/chunks/helpers-35449062.js","_app/immutable/chunks/_page-515b7c2f.js"];
+export const stylesheets = ["_app/immutable/assets/PageBuilder-639ddac8.css"];
