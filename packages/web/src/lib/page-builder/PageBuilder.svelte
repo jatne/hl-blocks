@@ -1,14 +1,5 @@
 <script>
-	import {
-		EmptySpace,
-		Image,
-		RichEditor,
-		Features,
-		TitleWithText,
-		Columns,
-		Slider,
-		PostsGrid,
-	} from '$lib/page-builder'
+	import { EmptySpace, Image, RichEditor, Features, TitleWithText, Columns, Slider, PostsGrid } from '$lib/page-builder'
 
 	export let blocks = false
 </script>
@@ -24,11 +15,7 @@
 		{:else if block._type === 'featureBox'}
 			<Features content={block.features} />
 		{:else if block._type === 'titleWithText'}
-			<TitleWithText
-				title={block.title}
-				text={block.text}
-				alignment={block.alignment}
-			/>
+			<TitleWithText title={block.title} text={block.text} alignment={block.alignment} />
 		{:else if block._type === 'slice'}
 			<svelte:self blocks={block.content} />
 		{:else if block._type === 'columns'}

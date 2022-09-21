@@ -3,7 +3,7 @@ export default {
   name: 'post',
   type: 'document',
   initialValue: {
-    date: new Date(),
+    publishDate: new Date().toString(),
   },
   fields: [
     {
@@ -29,7 +29,7 @@ export default {
     },
     {
       title: 'Post date',
-      name: 'date',
+      name: 'publishDate',
       type: 'datetime',
     },
     {
@@ -71,8 +71,8 @@ export default {
   preview: {
     select: {
       title: 'name',
-      subtitle: 'date',
+      subtitle: 'publishDate',
       media: 'imageFeatured',
-    }
+    },
   }
 }
